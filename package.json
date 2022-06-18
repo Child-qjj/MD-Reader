@@ -27,7 +27,7 @@
     "vue-tsc": "^0.34.7"
   },
   "lint-staged": {
-    "*.js": ["pnpm run lint"],
-    "*.{ts,json,yml,yaml,md}": ["prettier --write"]
+    "*.js": ["eslint src/**/*.{jsx,js,ts,tsx,vue} --fix"],
+    "*.{ts,json,yml,yaml,md,vue}": ["prettier --write"]
   }
 }

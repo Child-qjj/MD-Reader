@@ -8,8 +8,10 @@ module.exports = {
   },
   extends: [
     // 'standard',
+    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    "prettier"
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -26,12 +28,11 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 禁用 debugger
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 禁用 console
     'vue/no-multiple-template-root': 0,
     'vue/max-attributes-per-line': ['error', {
       singleline: 1
     }]
-  },
-  extends: [
-    "prettier"
-  ]
+  }
 }
