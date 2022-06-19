@@ -30,6 +30,7 @@ module.exports = {
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 禁用 debugger
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 禁用 console
+    "@typescript-eslint/no-var-requires": 0,
     'vue/no-multiple-template-root': 0,
     'vue/max-attributes-per-line': ['error', {
       singleline: 1
