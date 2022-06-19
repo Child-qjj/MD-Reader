@@ -19,7 +19,15 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/electron/electron.ts"
+    "src/electron/*.ts",
+    "src/electron/*.ts",
+    "plugins/**/*.ts",
+    "plugins/*.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
