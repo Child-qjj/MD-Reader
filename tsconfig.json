@@ -20,9 +20,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/electron/*.ts",
-    "src/electron/*.ts",
-    "plugins/**/*.ts",
-    "plugins/*.ts"
+    "src/electron/*.ts"
+    // "plugins/**/*.ts",
+    // "plugins/*.ts"
   ],
   "exclude": ["node_modules"],
   "references": [

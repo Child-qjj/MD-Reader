@@ -1,17 +1,9 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import electron from "./plugins/electron-load-plugin/index";
 import path from "path";
-
+import electron from "vite-plugin-electron-hmr";
 // https://vitejs.dev/config/
 export default defineConfig({
 	// base: path.resolve(__dirname, './dist/'),
-	plugins: [
-		vue(),
-		electron({
-			main: {
-				entry: "nothing"
-			}
-		})
-	]
+	plugins: [vue(), electron({})]
 });
