@@ -4,5 +4,5 @@ import electron from "vite-plugin-electron-hmr";
 // https://vitejs.dev/config/
 export default defineConfig({
 	// base: path.resolve(__dirname, './dist/'),
-	plugins: [vue(), electron({ mainProcess: [] })]
+	plugins: [vue(), electron({ main: {} })]
 });

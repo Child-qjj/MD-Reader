@@ -7,6 +7,7 @@ export default {
 				output: [
 					{
 						dir: "dist/electron",
+						format: "cjs",
 						entryFileNames: "[name].js"
 					}
 				]
