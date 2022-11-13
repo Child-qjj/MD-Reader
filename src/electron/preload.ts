@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		const element: HTMLElement | null = document.getElementById(selector);
 		if (element) element.innerText = text;
 	};
-	console.log("arguments", process);
+	console.log("arguments", process, "sssss");
 
 	for (const dependency of ["chrome", "node", "electron"]) {
 		replaceText(
