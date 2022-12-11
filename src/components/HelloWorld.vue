@@ -1,52 +1,51 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { genMarked } from "../marked/index";
 
-defineProps<{ msg: string }>();
+const parserVal = ref(genMarked("&zwnj;"));
+const onBlur = (e: Event) => {
+	const targetValue = e.target as HTMLDivElement;
+	// let targetValue = e
+	// parserVal.value = genMarked(targetValue || "")
+};
+const onCurrentChanged = (e: Event) => {
+	const targetValue = (e as InputEvent).data;
+	console.log(targetValue);
 
-const count = ref(0);
+	// targetValue = genMarked(targetValue+)
+};
+const handleEnter = (e: KeyboardEvent) => {
+	// const targetValue = (e.target as HTMLDivElement)
+	// parserVal.value = genMarked(targetValue.innerText)
+};
 </script>
-
 <template>
-	<h1>{{ msg }}</h1>
-
-	<p>
-		Recommended IDE setup:
-		<a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-		+
-		<a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-	</p>
-
-	<p>See <code>README.md</code> for more information.</p>
-
-	<p>
-		<a href="https://vitejs.dev/guide/features.html" target="_blank">
-			Vite Docs
-		</a>
-		|
-		<a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-	</p>
-
-	<button type="button" @click="count++">count is: {{ count }}</button>
-	<p>
-		Edit
-		<code>components/HelloWorld.vue</code> to test hot module replacement.
-	</p>
+	<div
+		id="write"
+		contenteditable="true"
+		spellcheck="true"
+		@blur="onBlur"
+		@keyup.enter="handleEnter"
+		v-html="parserVal"
+	></div>
 </template>
+<style scoped lang="scss">
+#write {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 1000px;
+	height: 800px;
 
-<style scoped>
-a {
-	color: #42b983;
-}
+	&:focus-visible {
+		outline: 0;
+	}
 
-label {
-	margin: 0 0.5em;
-	font-weight: bold;
-}
-
-code {
-	background-color: #eee;
-	padding: 2px 4px;
-	border-radius: 4px;
-	color: #304455;
+	.md-p,
+	.md-heading {
+		&:empty:after {
+			content: "\200B";
+		}
+	}
 }
 </style>

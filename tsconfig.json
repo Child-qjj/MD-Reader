@@ -12,6 +12,8 @@
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "noImplicitThis": true,
     "types": ["vite/client", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

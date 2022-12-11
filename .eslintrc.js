@@ -32,8 +32,16 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off', // 禁用 console
     "@typescript-eslint/no-var-requires": 0,
     'vue/no-multiple-template-root': 0,
+    'vue/multi-word-component-names': ['error', {
+      "ignores": ["index"]
+    }],
     'vue/max-attributes-per-line': ['error', {
-      singleline: 1
+      "singleline": {
+        "max": 5
+      },
+      "multiline": {
+        "max": 1
+      }
     }]
   }
 }
